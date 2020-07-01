@@ -270,11 +270,11 @@ class ClientCall<Q, R> implements Response {
       return;
     }
     if (!_trailers.isCompleted) {
-      if (_hasReceivedResponses) {
-        // Trailers are required after receiving data.
-        _responseError(GrpcError.unavailable('Missing trailers'));
-        return;
-      }
+      // if (_hasReceivedResponses) {
+      //   // Trailers are required after receiving data.
+      //   _responseError(GrpcError.unavailable('Missing trailers'));
+      //   return;
+      // }
 
       // Only received a header frame and no data frames, so the header
       // should contain "trailers" as well (Trailers-Only).
